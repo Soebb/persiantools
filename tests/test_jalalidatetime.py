@@ -42,6 +42,10 @@ class TestJalaliDateTime(TestCase):
             JalaliDateTime(1369, 7, 1, 14, 14, 1, 9111),
             JalaliDateTime(JalaliDateTime(1369, 7, 1, 14, 14, 1, 9111)),
         )
+        tehran_tz = timezone(timedelta(hours=3, minutes=30))
+        aware_source = JalaliDateTime(1404, 2, 8, 12, 0, 0, tzinfo=tehran_tz)
+        self.assertEqual(JalaliDateTime(aware_source).tzinfo, tehran_tz)
+        self.assertEqual(JalaliDateTime(aware_source, tzinfo=timezone.utc).tzinfo, timezone.utc)
 
         g = JalaliDateTime.now()
         self.assertEqual(g.time(), _time(g.hour, g.minute, g.second, g.microsecond))

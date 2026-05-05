@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.5.1](https://github.com/majiidd/persiantools/compare/5.5.0...5.5.1) - 2026-05-05
+
+- Fixed `JalaliDateTime` copy-constructor to preserve `tzinfo` when initialized from another timezone-aware `JalaliDateTime` (fixes [#62](https://github.com/majiidd/persiantools/issues/62)).
+- Added regression coverage for timezone-preserving constructor behavior and explicit `tzinfo` override semantics.
+- This bug fix was implemented with Cursor AI assistance.
+
 ## [5.5.0](https://github.com/majiidd/persiantools/compare/5.4.0...5.5.0) - 2026-01-30
 
 - Python 3.14 support.

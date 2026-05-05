@@ -1086,6 +1086,8 @@ class JalaliDateTime(JalaliDate):
             minute = year.minute
             second = year.second
             microsecond = year.microsecond
+            if tzinfo is None:
+                tzinfo = year.tzinfo
             year = year.year
 
         elif isinstance(year, dt) and month is None:
